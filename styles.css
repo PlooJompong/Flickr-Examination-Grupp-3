@@ -1,0 +1,32 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+#section-form{
+    display: flex;
+    justify-content: center;
+
+   
+}
+#label-search{
+    display:flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+#input-text{
+  
+}
+
+#input-button{
+    
+ 
+}
+#form-search{
+    display:flex;
+    flex-direction: column;
+    gap:4px;
+    max-width: 300px;
+    
+}
