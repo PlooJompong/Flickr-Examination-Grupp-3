@@ -33,3 +33,13 @@ function fetchImages() {
 }
 
 fetchImages();
+
+let submitBtn = document.getElementById("button");
+submitBtn.addEventListener("submit", fetchImages);
+
+const search = document.getElementById("search");
+
+search.addEventListener("input", (event) => {
+  text = event.target.value;
+  fetchImages();
+});
