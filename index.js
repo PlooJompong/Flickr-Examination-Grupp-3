@@ -12,8 +12,18 @@ function fetchImages() {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
+      // här vill vi hämta vår div med sökresultat
+      const imageContainer = document.getElementById("search-results");
+      // töm containern från tidigare bilder
+      imageContainer.innerHTML = "";
       data.photos.photo.forEach((img) => {
         let imgUrl = `https://farm${img.farm}.staticflickr.com/${img.server}/${img.id}_${img.secret}_${imgSize}.jpg`;
+        // skapa ett nytt img-element för varje bild
+        let imgElement = document.createElement("img");
+        imgElement.src = imgUrl;
+
+        // lägg till nya img-elementet i bildcontainern
+        imageContainer.appendChild(imgElement);
         console.log(imgUrl);
       });
     })
