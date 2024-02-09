@@ -6,7 +6,7 @@ const baseUrl = "https://api.flickr.com/services/rest";
 // DOM
 const submitBtn = document.querySelector("#input-button");
 const textInput = document.querySelector("#search-field");
-const imageContainer = document.querySelector("#search-results");
+const imageContainer = document.querySelector("#section-results");
 
 let text = "";
 let imgSize = "w"; // 400px
