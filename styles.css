@@ -40,21 +40,13 @@ width: 75px;
     border-radius: 5px;
     border: 1px solid #D2D9DC;
     font-family: inherit;
-   
-}
-
-
+ }
 
 .menu-choice{
     color: white;
     font-size: medium;
 }
 /* SLUT HEADER */
-
-footer {
-  display: flex;
-  background-color: black;
-}
 
 #contributors-head {
   margin-left: 5rem;
@@ -93,4 +85,24 @@ ul {
   margin-left: 1rem;
   width: 5.3125rem;
   height: 5.3125rem;
+}
+
+footer {
+    max-width: 1440px;
+    display: flex;
+    background-color: black;
+}
+
+#input-button {
+}
+
+#search-results {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  width: 95%;
+  gap: 5px;
 }
