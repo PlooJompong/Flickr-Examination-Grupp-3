@@ -12,13 +12,13 @@ body {
   height: 5rem;
 }
 
-#form-search{
+#form-search {
 display:flex;
 width: 50%;
 gap: 5px; 
 }
 
-#img-header{
+#img-header {
 width: 75px;
 }
 
@@ -43,13 +43,23 @@ width: 75px;
    
 }
 
-
-
 .menu-choice{
     color: white;
     font-size: medium;
 }
 /* SLUT HEADER */
+
+/* main start */
+#section-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  width: 95%;
+  gap: 5px;
+}
+/* main end */
 
 footer {
   display: flex;
