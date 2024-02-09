@@ -16,6 +16,13 @@ body {
 #input-text {
 }
 
+footer {
+    max-width: 1440px;
+    display: flex;
+    background-color: black;
+
+}
+
 #input-button {
 }
 
