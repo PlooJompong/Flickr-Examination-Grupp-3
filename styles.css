@@ -1,77 +1,96 @@
-body{
-    font-family: 'Montserrat', sans-serif;
-
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
-#section-form{
-    display: flex;
-    justify-content: center;
+/* START HEADER */
 
+#header-flickr {
+  background-color: #8AA2A9;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 5rem;
+}
+
+#form-search{
+display:flex;
+width: 50%;
+gap: 5px; 
+}
+
+#img-header{
+width: 75px;
+}
+
+#search-field {
+    padding: 10px 20px;
+    background-color: rgb(241, 238, 238);
+    min-width: 70%;
+    border-radius: 5px;
+    border: 1px solid #717C89;
+    font-family: inherit;
+}
+
+#input-button {
+    background-color: #717C89;
+    color: white;
+    font-size: medium;
+    padding: 7px 10px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: 1px solid #D2D9DC;
+    font-family: inherit;
    
 }
-#label-search{
-    display:flex;
-    justify-content: center;
-    padding-bottom: 20px;
-}
 
-#input-text{
-  
-}
 
-#input-button{
-    
- 
+
+.menu-choice{
+    color: white;
+    font-size: medium;
 }
-#form-search{
-    display:flex;
-    flex-direction: column;
-    gap:4px;
-    max-width: 300px;
-    
-}
+/* SLUT HEADER */
 
 footer {
-    display: flex;
-    background-color: black;
+  display: flex;
+  background-color: black;
 }
 
 #contributors-head {
-    margin-left: 5rem;
-    margin-top: 3.8rem;
-    color: white;
+  margin-left: 5rem;
+  margin-top: 3.8rem;
+  color: white;
 }
 
-#Contributors{
-    display: flex;
-    margin-top: 4.1rem;
-    flex-direction: column;
-    color: white;
+#Contributors {
+  display: flex;
+  margin-top: 4.1rem;
+  flex-direction: column;
+  color: white;
 }
 
 ul {
-    display: flex;
-    list-style: none;
-    gap: 3rem;
-    
+  display: flex;
+  list-style: none;
+  gap: 3rem;
 }
 
 #social-media {
-    display: flex;
-    flex-direction: column;
-    margin-left: 35rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 35rem;
 }
 
 #social-media-head {
-    margin-top: 1.5rem;
-    color: white;
+  margin-top: 1.5rem;
+  color: white;
 }
 
 #social-media-icons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 1.5rem;
-    margin-left: 1rem;
-    width: 5.3125rem;
-    height: 5.3125rem;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  margin-left: 1rem;
+  width: 5.3125rem;
+  height: 5.3125rem;
 }
