@@ -7,24 +7,12 @@ const baseUrl = "https://api.flickr.com/services/rest";
 const submitBtn = document.querySelector("#input-button");
 const textInput = document.querySelector("#search-field");
 const imageContainer = document.querySelector("#section-results");
-
-//Paging 
-let currentPage = 1;
+const currentPage = document.querySelector("#current-page");
 const previousPageButton = document.querySelector("#prev-page");
 const nextPageButton = document.querySelector("#next-page");
 
-previousPageButton.addEventListener("click", () => {
-  if (currentPage > 1) {
-    currentPage--;
-    fetchImages();
-  }
-});
-
-nextPageButton.addEventListener("click", () => {
-  currentPage++;
-  fetchImages();
-});
-
+let page = 1;
+let errorAdded = false;
 let text = "";
 let imgSize = "w"; // 400px
 
@@ -34,7 +22,7 @@ if (text === "") {
 }
 
 function fetchImages() {
-  let url = `${baseUrl}?api_key=${apiKey}&method=${method}&text=${text}&page=${currentPage}&per_page=20&sort=relevance&format=json&nojsoncallback=1`;
+  let url = `${baseUrl}?api_key=${apiKey}&method=${method}&text=${text}&page=${page}&per_page=20&sort=relevance&format=json&nojsoncallback=1`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
@@ -43,7 +31,6 @@ function fetchImages() {
 
       data.photos.photo.forEach((img) => {
         const imgUrl = `https://farm${img.farm}.staticflickr.com/${img.server}/${img.id}_${img.secret}_${imgSize}.jpg`;
-        
 
         // skapa ett nytt img-element för varje bild
         const imgElement = document.createElement("img");
@@ -56,19 +43,10 @@ function fetchImages() {
     .catch((error) => {
       const errorMsg = document.createElement("p");
       errorMsg.textContent = `Error fetching images: ${error}`;
-      errorMsg.style.color = "red";
-      errorMsg.style.fontSize = "11px";
-      console.error("Error fetching images:", error);
+      errorMsg.classList.add("errorMsg");
+      imageContainer.appendChild(errorMsg);
     });
 }
-
-let errorAdded = false;
-const errorEmpty = document.createElement("p");
-errorEmpty.style.fontSize = "11px";
-errorEmpty.style.display = "block";
-errorEmpty.style.fontStyle = "italic";
-errorEmpty.style.margin = "0";
-errorEmpty.style.alignSelf = "center";
 
 submitBtn.addEventListener("click", (event) => {
   event.preventDefault();
@@ -78,12 +56,24 @@ submitBtn.addEventListener("click", (event) => {
     errorEmpty.textContent = "";
     errorAdded = false;
   } else {
-    if (!errorAdded) {
-      errorEmpty.textContent = "Textfältet är tomt";
-      const form = document.getElementsByTagName("form")[0];
-      submitBtn.insertAdjacentElement("afterend", errorEmpty);
-      errorAdded = true;
-    }
-    console.log("textInput är tom");
+    const errorEmpty = document.createElement("p");
+    errorEmpty.textContent = "Textfältet är tomt!";
+    errorEmpty.classList.add("errorEmpty");
+    submitBtn.insertAdjacentElement("afterend", errorEmpty);
+    errorAdded = true;
   }
+});
+
+previousPageButton.addEventListener("click", () => {
+  if (page > 1) {
+    page--;
+    fetchImages();
+    currentPage.innerText = page;
+  }
+});
+
+nextPageButton.addEventListener("click", () => {
+  page++;
+  fetchImages();
+  currentPage.innerText = page;
 });

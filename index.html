@@ -1,37 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Flicker API project</title>
-  </head>
 
-  <body>
-    <header id="header-flickr">
-      <img id="img-header" src="assets/Flickr_logo.png" />
-      <form id="form-search">
-        <input
-          type="text"
-          id="search-field"
-          placeholder="What are you looking for?"
-        />
-        <input id="input-button" type="submit" value="Search" />
-      </form>
-      <h2 class="menu-choice">Sign up</h2>
-      <h2 class="menu-choice">Log in</h2>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Flicker API project</title>
+</head>
 
-    <section id="section-results"></section>
+<body>
+  <header id="header-flickr">
+    <img id="img-header" src="assets/Flickr_logo.png" />
+    <form id="form-search">
+      <input type="text" id="search-field" placeholder="What are you looking for?" />
+      <input id="input-button" type="submit" value="Search" />
+    </form>
+    <h2 class="menu-choice">Sign up</h2>
+    <h2 class="menu-choice">Log in</h2>
+  </header>
 
   <section id="section-results"></section>
-  
+
   <section class="change-page-container">
     <button id="prev-page" class="page">Previous</button>
     <p id="current-page">1</p>
@@ -63,18 +55,16 @@
     <section id="social-media">
       <h4>Social media</h4>
 
-        <section id="social-media-icons">
-          <i class="fa-brands fa-square-facebook"></i>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-x-twitter"></i>
-        </section>
+      <section id="social-media-icons">
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
       </section>
-    </footer>
+    </section>
+  </footer>
 
-    <script src="index.js"></script>
-    <script
-      src="https://kit.fontawesome.com/402575bb77.js"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <script src="index.js"></script>
+  <script src="https://kit.fontawesome.com/402575bb77.js" crossorigin="anonymous"></script>
+</body>
+
 </html>
