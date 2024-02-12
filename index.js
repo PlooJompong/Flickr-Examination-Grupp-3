@@ -36,31 +36,27 @@ function fetchImages() {
         displayImage(imgUrl);
       });
 
-      
-      const lightbox = document.createElement('div')
-      lightbox.id = 'lightbox'
-      document.body.appendChild(lightbox)
-      
-      const images = document.querySelectorAll('img')
-      images.forEach(image => {
-        image.addEventListener('click', e => {
-          lightbox.classList.add('active')
-          const img = document.createElement('img')
-          img.src = image.src
+      const lightbox = document.createElement("div");
+      lightbox.id = "lightbox";
+      imageContainer.appendChild(lightbox);
+
+      const images = document.querySelectorAll("img");
+      images.forEach((image) => {
+        image.addEventListener("click", () => {
+          lightbox.classList.add("active");
+          const img = document.createElement("img");
+          img.src = image.src;
           while (lightbox.firstChild) {
-            lightbox.removeChild(lightbox.firstChild)
+            lightbox.removeChild(lightbox.firstChild);
           }
-          lightbox.appendChild(img)
-        })
-      })
-      
-      lightbox.addEventListener('click', e => {
-        if (e.target !== e.currentTarget) return
-        lightbox.classList.remove('active')
-      })
+          lightbox.appendChild(img);
+        });
+      });
 
-
-
+      lightbox.addEventListener("click", (e) => {
+        if (e.target !== e.currentTarget) return;
+        lightbox.classList.remove("active");
+      });
     })
     .catch((error) => {
       const errorMsg = document.createElement("p");
@@ -79,6 +75,12 @@ function displayImage(imgUrl) {
 submitBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (textInput.value !== "") {
+    if (textInput.value !== text) {
+      page = 1;
+      currentPage.innerText = page;
+    } else if (textInput.value === text) {
+      return;
+    }
     text = textInput.value;
     fetchImages();
     errorEmpty.remove();

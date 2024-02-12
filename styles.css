@@ -14,6 +14,22 @@ img {
   object-fit: cover;
 }
 
+ul {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+
+h4 {
+  margin: 0;
+  color: white;
+}
+
+i {
+  color: white;
+  font-size: 1.2rem;
+}
+
 a {
   text-decoration: none;
   color: white;
@@ -29,7 +45,7 @@ a:hover {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 5rem;
+  height: 80px;
   width: 100%;
   margin-bottom: 7px;
 }
@@ -41,28 +57,27 @@ a:hover {
 }
 
 #img-header {
-  width: 75px;
   display: flex;
-  gap: 5px;
+  width: 75px;
   height: auto;
+  gap: 5px;
 }
 
 #search-field {
   padding: 10px 20px;
-  background-color: rgb(241, 238, 238);
   min-width: 70%;
   border-radius: 5px;
   border: 1px solid #717c89;
   font-family: inherit;
+  background-color: rgb(241, 238, 238);
 }
 
 #input-button,
 .page {
   background-color: #717c89;
   color: white;
-  font-size: medium;
+  font-size: 1rem;
   padding: 7px 10px;
-  font-weight: 400;
   border-radius: 5px;
   border: 1px solid #d2d9dc;
   font-family: inherit;
@@ -76,14 +91,14 @@ a:hover {
 
 .menu-choice {
   color: white;
-  font-size: medium;
+  font-size: 1rem;
 }
 
 .errorEmpty {
   display: block;
+  margin: 0;
   font-size: 0.75rem;
   font-style: italic;
-  margin: 0;
   align-self: center;
 }
 
@@ -120,31 +135,28 @@ a:hover {
   color: red;
 }
 
-.lightbox {
-  display: none;
+#lightbox {
   position: fixed;
-  z-index: 999;
+  z-index: 1000;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 1em;
-  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
 }
 
-.lightbox:target {
+#lightbox.active {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.lightbox-span {
-  display: block;
-  width: 800px;
-  height: 800px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  padding: 4px;
+  background-color: black;
+  border: 2px solid white;
 }
 
 /* MAIN END */
@@ -166,17 +178,6 @@ footer {
   color: white;
 }
 
-ul {
-  display: flex;
-  list-style: none;
-  gap: 3rem;
-}
-
-h4 {
-  margin: 0;
-  color: white;
-}
-
 #social-media {
   display: flex;
   flex-direction: column;
@@ -188,47 +189,4 @@ h4 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-}
-
-i {
-  color: white;
-  font-size: 1.2rem;
-}
-
-.errorEmpty {
-  display: block;
-  font-size: 0.75rem;
-  font-style: italic;
-  margin: 0;
-  align-self: center;
-}
-
-.errorMsg {
-  display: block;
-  font-size: 1rem;
-  color: red;
-}
-
-#lightbox {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .8);
-  display: none;
-}
-
-#lightbox.active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  padding: 4px;
-  background-color: black;
-  border: 2px solid white;
 }
