@@ -11,6 +11,7 @@ const currentPage = document.querySelector("#current-page");
 const previousPageButton = document.querySelector("#prev-page");
 const nextPageButton = document.querySelector("#next-page");
 
+// createElement
 const errorEmpty = document.createElement("p");
 
 let text = "";
