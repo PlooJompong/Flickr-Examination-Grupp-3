@@ -8,6 +8,23 @@ const submitBtn = document.querySelector("#input-button");
 const textInput = document.querySelector("#search-field");
 const imageContainer = document.querySelector("#section-results");
 
+//Paging 
+let currentPage = 1;
+const previousPageButton = document.querySelector("#prev-page");
+const nextPageButton = document.querySelector("#next-page");
+
+previousPageButton.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    fetchImages();
+  }
+});
+
+nextPageButton.addEventListener("click", () => {
+  currentPage++;
+  fetchImages();
+});
+
 let text = "";
 let imgSize = "w"; // 400px
 
@@ -17,7 +34,7 @@ if (text === "") {
 }
 
 function fetchImages() {
-  let url = `${baseUrl}?api_key=${apiKey}&method=${method}&text=${text}&per_page=20&sort=relevance&format=json&nojsoncallback=1`;
+  let url = `${baseUrl}?api_key=${apiKey}&method=${method}&text=${text}&page=${currentPage}&per_page=20&sort=relevance&format=json&nojsoncallback=1`;
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
@@ -26,6 +43,7 @@ function fetchImages() {
 
       data.photos.photo.forEach((img) => {
         const imgUrl = `https://farm${img.farm}.staticflickr.com/${img.server}/${img.id}_${img.secret}_${imgSize}.jpg`;
+        
 
         // skapa ett nytt img-element för varje bild
         const imgElement = document.createElement("img");
