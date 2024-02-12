@@ -14,6 +14,15 @@ img {
   object-fit: cover;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: orange;
+}
+
 /* START HEADER */
 #header-flickr {
   background-color: #8aa2a9;
@@ -47,7 +56,8 @@ img {
   font-family: inherit;
 }
 
-#input-button {
+#input-button,
+.page {
   background-color: #717c89;
   color: white;
   font-size: medium;
@@ -56,6 +66,12 @@ img {
   border-radius: 5px;
   border: 1px solid #d2d9dc;
   font-family: inherit;
+  cursor: pointer;
+}
+
+#input-button:hover,
+.page:hover {
+  color: orange;
 }
 
 .menu-choice {
@@ -65,18 +81,32 @@ img {
 
 /* SLUT HEADER */
 
-/* main start */
+/* MAIN START */
 #section-results {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-inline: auto;
-  width: 95%;
+  margin-bottom: 5px;
+  width: 100%;
   gap: 5px;
 }
 
-/* main end */
+.change-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#current-page {
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 2px solid #d2d9dc;
+}
+
+/* MAIN END */
 
 footer {
   width: 100%;
@@ -112,11 +142,6 @@ h4 {
   flex-direction: column;
   gap: 12px;
   padding: 20px 10px;
-}
-
-#social-media-head {
-  margin-top: 1.5rem;
-  color: white;
 }
 
 #social-media-icons {
