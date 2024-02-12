@@ -11,10 +11,12 @@ const currentPage = document.querySelector("#current-page");
 const previousPageButton = document.querySelector("#prev-page");
 const nextPageButton = document.querySelector("#next-page");
 
-let page = 1;
-let errorAdded = false;
+const errorEmpty = document.createElement("p");
+
 let text = "";
 let imgSize = "w"; // 400px
+let page = 1;
+let errorAdded = false;
 
 if (text === "") {
   text = "art";
@@ -26,18 +28,11 @@ function fetchImages() {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      // töm containern från tidigare bilder
       imageContainer.innerHTML = "";
 
       data.photos.photo.forEach((img) => {
         const imgUrl = `https://farm${img.farm}.staticflickr.com/${img.server}/${img.id}_${img.secret}_${imgSize}.jpg`;
-
-        // skapa ett nytt img-element för varje bild
-        const imgElement = document.createElement("img");
-        imgElement.src = imgUrl;
-
-        // lägg till nya img-elementet i bildcontainern
-        imageContainer.appendChild(imgElement);
+        displayImage(imgUrl);
       });
 
       
@@ -74,15 +69,20 @@ function fetchImages() {
     });
 }
 
+function displayImage(imgUrl) {
+  const imgElement = document.createElement("img");
+  imgElement.src = imgUrl;
+  imageContainer.appendChild(imgElement);
+}
+
 submitBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (textInput.value !== "") {
     text = textInput.value;
     fetchImages();
-    errorEmpty.textContent = "";
+    errorEmpty.remove();
     errorAdded = false;
   } else {
-    const errorEmpty = document.createElement("p");
     errorEmpty.textContent = "Textfältet är tomt!";
     errorEmpty.classList.add("errorEmpty");
     submitBtn.insertAdjacentElement("afterend", errorEmpty);
