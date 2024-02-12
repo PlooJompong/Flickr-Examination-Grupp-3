@@ -44,14 +44,9 @@ function fetchImages() {
 }
 
 function displayImage(imgUrl) {
-  let index = 1;
-
   const imgElement = document.createElement("img");
-
-
   imgElement.src = imgUrl;
-
-
+  imageContainer.appendChild(imgElement);
 }
 
 submitBtn.addEventListener("click", (event) => {
