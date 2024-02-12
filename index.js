@@ -54,16 +54,36 @@ function fetchImages() {
       });
     })
     .catch((error) => {
+      const errorMsg = document.createElement("p");
+      errorMsg.textContent = `Error fetching images: ${error}`;
+      errorMsg.style.color = "red";
+      errorMsg.style.fontSize = "11px";
       console.error("Error fetching images:", error);
     });
 }
+
+let errorAdded = false;
+const errorEmpty = document.createElement("p");
+errorEmpty.style.fontSize = "11px";
+errorEmpty.style.display = "block";
+errorEmpty.style.fontStyle = "italic";
+errorEmpty.style.margin = "0";
+errorEmpty.style.alignSelf = "center";
 
 submitBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (textInput.value !== "") {
     text = textInput.value;
     fetchImages();
+    errorEmpty.textContent = "";
+    errorAdded = false;
   } else {
+    if (!errorAdded) {
+      errorEmpty.textContent = "Textfältet är tomt";
+      const form = document.getElementsByTagName("form")[0];
+      submitBtn.insertAdjacentElement("afterend", errorEmpty);
+      errorAdded = true;
+    }
     console.log("textInput är tom");
   }
 });
