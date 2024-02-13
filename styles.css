@@ -21,7 +21,7 @@ ul {
   gap: 3rem;
 }
 
-h4 {
+p {
   margin: 0;
   color: white;
 }
@@ -41,7 +41,7 @@ a:hover {
 }
 
 /* START HEADER */
-#header-flickr {
+header {
   background-color: #8aa2a9;
   display: flex;
   justify-content: space-evenly;
@@ -103,7 +103,7 @@ a:hover {
   align-self: center;
 }
 
-/* END HEADER */
+/* HEADER END */
 
 /* MAIN START */
 #section-results {
@@ -128,6 +128,7 @@ a:hover {
   padding: 5px 15px;
   border-radius: 5px;
   border: 2px solid #d2d9dc;
+  color: black;
 }
 
 .errorMsg {
@@ -161,7 +162,6 @@ a:hover {
 }
 
 /* MAIN END */
-
 
 /* FOOTER START */
 

@@ -1,72 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Flickr API project</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <title>Flicker API project</title>
-</head>
+  <body>
+    <header>
+      <img id="img-header" src="assets/Flickr_logo.png" />
+      <form id="form-search">
+        <input
+          type="text"
+          id="search-field"
+          placeholder="What are you looking for?"
+        />
+        <input id="input-button" type="submit" value="Search" />
+      </form>
+      <h2 class="menu-choice">Sign up</h2>
+      <h2 class="menu-choice">Log in</h2>
+    </header>
 
-<body>
-  <header id="header-flickr">
-    <img id="img-header" src="assets/Flickr_logo.png" />
-    <form id="form-search">
-      <input type="text" id="search-field" placeholder="What are you looking for?" />
-      <input id="input-button" type="submit" value="Search" />
-    </form>
-    <ul>
-    <li class="menu-choice">Sign up</li>
-    <li class="menu-choice">Log in</li>
-  </ul>
-  </header>
+    <section id="section-results"></section>
 
-  <section id="section-results"></section>
-
-  <section class="change-page-container">
-    <button id="prev-page" class="page">Previous</button>
-    <p id="current-page">1</p>
-    <button id="next-page" class="page">Next</button>
-  </section>
-
-  <footer id="footer">
-    <section id="contributors">
-      <ul>
-        <li><strong>Contributors:</strong></li>
-        <a href="https://github.com/PlooJompong" target="_blank">
-          <li>Ploo Jompong</li>
-        </a>
-        <a href="https://github.com/sofrosb" target="_blank">
-          <li>Sofia Rosborg</li>
-        </a>
-        <a href="https://github.com/Gaspardious" target="_blank">
-          <li>Dejan Gaspar</li>
-        </a>
-        <a href="https://github.com/RockAnnRoll" target="_blank">
-          <li>Ann Heijkenskjöld</li>
-        </a>
-        <a href="https://github.com/vickanS" target="_blank">
-          <li>Victoria Sten Åsenius</li>
-        </a>
-      </ul>
+    <section class="change-page-container">
+      <button id="prev-page" class="page">Previous</button>
+      <p id="current-page">1</p>
+      <button id="next-page" class="page">Next</button>
     </section>
 
-    <section id="social-media">
-      <h4>Social media</h4>
-
-      <section id="social-media-icons">
-        <i class="fa-brands fa-square-facebook"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-x-twitter"></i>
+    <footer>
+      <section id="contributors">
+        <ul>
+          <li><strong>Contributors:</strong></li>
+          <a href="https://github.com/PlooJompong" target="_blank">
+            <li>Ploo Jompong</li>
+          </a>
+          <a href="https://github.com/sofrosb" target="_blank">
+            <li>Sofia Rosborg</li>
+          </a>
+          <a href="https://github.com/Gaspardious" target="_blank">
+            <li>Dejan Gaspar</li>
+          </a>
+          <a href="https://github.com/RockAnnRoll" target="_blank">
+            <li>Ann Heijkenskjöld</li>
+          </a>
+          <a href="https://github.com/vickanS" target="_blank">
+            <li>Victoria Sten Åsenius</li>
+          </a>
+        </ul>
       </section>
-    </section>
-  </footer>
 
-  <script src="index.js"></script>
-  <script src="https://kit.fontawesome.com/402575bb77.js" crossorigin="anonymous"></script>
-</body>
+      <section id="social-media">
+        <p>Social media</p>
 
+        <section id="social-media-icons">
+          <i class="fa-brands fa-square-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+        </section>
+      </section>
+    </footer>
+
+    <script src="index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/402575bb77.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

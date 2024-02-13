@@ -60,7 +60,7 @@ function fetchImages() {
     })
     .catch((error) => {
       const errorMsg = document.createElement("p");
-      errorMsg.textContent = `Error fetching images: ${error}`;
+      errorMsg.innerText = `Error fetching images: ${error}`;
       errorMsg.classList.add("errorMsg");
       imageContainer.appendChild(errorMsg);
     });
@@ -86,7 +86,7 @@ submitBtn.addEventListener("click", (event) => {
     errorEmpty.remove();
     errorAdded = false;
   } else {
-    errorEmpty.textContent = "Textfältet är tomt!";
+    errorEmpty.innerText = "Textfältet är tomt!";
     errorEmpty.classList.add("errorEmpty");
     submitBtn.insertAdjacentElement("afterend", errorEmpty);
     errorAdded = true;
