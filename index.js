@@ -4,6 +4,7 @@ const method = "flickr.photos.search";
 const baseUrl = "https://api.flickr.com/services/rest";
 
 // DOM
+const inputContainer = document.querySelector("#input-container");
 const submitBtn = document.querySelector("#input-button");
 const textInput = document.querySelector("#search-field");
 const imageContainer = document.querySelector("#section-results");
@@ -40,7 +41,7 @@ function fetchImages() {
       lightbox.id = "lightbox";
       imageContainer.appendChild(lightbox);
 
-      const images = document.querySelectorAll("img");
+      const images = document.querySelectorAll("img:not(#img-header)");
       images.forEach((image) => {
         image.addEventListener("click", () => {
           lightbox.classList.add("active");
@@ -86,9 +87,9 @@ submitBtn.addEventListener("click", (event) => {
     errorEmpty.remove();
     errorAdded = false;
   } else {
-    errorEmpty.innerText = "Textfältet är tomt!";
+    inputContainer.appendChild(errorEmpty);
+    errorEmpty.innerText = "*The input is empty!";
     errorEmpty.classList.add("errorEmpty");
-    submitBtn.insertAdjacentElement("afterend", errorEmpty);
     errorAdded = true;
   }
 });

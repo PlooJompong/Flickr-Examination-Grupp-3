@@ -46,14 +46,35 @@ header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 80px;
+  padding: 15px;
   width: 100%;
   margin-bottom: 7px;
 }
 
+#input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.errorEmpty {
+  position: absolute;
+  display: block;
+  margin: 0;
+  font-size: 0.75rem;
+  font-style: italic;
+  top: 125%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
 #form-search {
   display: flex;
-  width: 60%;
+  width: 80%;
   gap: 5px;
 }
 
@@ -62,6 +83,7 @@ header {
   width: 75px;
   height: auto;
   gap: 5px;
+  cursor: default;
 }
 
 #search-field {
@@ -95,14 +117,6 @@ header {
   font-size: 1rem;
 }
 
-.errorEmpty {
-  display: block;
-  margin: 0;
-  font-size: 0.75rem;
-  font-style: italic;
-  align-self: center;
-}
-
 /* HEADER END */
 
 /* MAIN START */
@@ -113,7 +127,7 @@ header {
   align-items: center;
   margin-inline: auto;
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   gap: 5px;
 }
 
@@ -122,6 +136,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  margin-bottom: 15px;
 }
 
 #current-page {
@@ -169,8 +184,8 @@ footer {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  background-color: #333;
   align-items: center;
+  background-color: #333;
   margin-top: 7px;
 }
 

@@ -1,3 +1,3 @@
 Flickr API Projekt.
 
-Made by: Ann, Dejan, Ploo, Sofia, Victoria 
+Made by: Ann, Dejan, Ploo, Sofia, Victoria
