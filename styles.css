@@ -12,6 +12,7 @@ img {
   width: 320px;
   height: 320px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 ul {
@@ -102,7 +103,7 @@ a:hover {
   align-self: center;
 }
 
-/* SLUT HEADER */
+/* END HEADER */
 
 /* MAIN START */
 #section-results {
@@ -161,6 +162,9 @@ a:hover {
 
 /* MAIN END */
 
+
+/* FOOTER START */
+
 footer {
   width: 100%;
   display: flex;
@@ -190,3 +194,5 @@ footer {
   justify-content: space-evenly;
   align-items: center;
 }
+
+/* FOOTER END */
