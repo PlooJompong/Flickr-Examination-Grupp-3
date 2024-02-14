@@ -18,7 +18,6 @@ const errorEmpty = document.createElement("p");
 let text = "";
 let imgSize = "w"; // 400px
 let page = 1;
-let errorAdded = false;
 
 if (text === "") {
   text = "art";
@@ -78,19 +77,24 @@ submitBtn.addEventListener("click", (event) => {
   if (textInput.value !== "") {
     if (textInput.value !== text) {
       page = 1;
-      currentPage.innerText = page;
     } else if (textInput.value === text) {
+      inputContainer.appendChild(errorEmpty);
+      errorEmpty.classList.remove("errorEmpty");
+      errorEmpty.classList.add("alreadyShowing");
+      errorEmpty.innerText = `*${text} is already showing!`;
+      textInput.value = "";
       return;
     }
     text = textInput.value;
+    currentPage.innerText = page;
+    textInput.value = "";
     fetchImages();
     errorEmpty.remove();
-    errorAdded = false;
   } else {
+    errorEmpty.classList.remove("alreadyShowing");
     inputContainer.appendChild(errorEmpty);
-    errorEmpty.innerText = "*The input is empty!";
     errorEmpty.classList.add("errorEmpty");
-    errorAdded = true;
+    errorEmpty.innerText = "*The input is empty!";
   }
 });
 

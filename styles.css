@@ -36,6 +36,18 @@ a {
   color: white;
 }
 
+button {
+  background-color: #717c89;
+  color: white;
+  font-size: 1rem;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: 1px solid #d2d9dc;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:hover,
 a:hover {
   color: orange;
 }
@@ -60,7 +72,8 @@ header {
   width: 50%;
 }
 
-.errorEmpty {
+.errorEmpty,
+.alreadyShowing {
   position: absolute;
   display: block;
   margin: 0;
@@ -70,6 +83,10 @@ header {
   left: 20%;
   transform: translate(-50%, -50%);
   color: black;
+}
+
+.alreadyShowing {
+  left: 22%;
 }
 
 #form-search {
@@ -93,23 +110,6 @@ header {
   border: 1px solid #717c89;
   font-family: inherit;
   background-color: rgb(241, 238, 238);
-}
-
-#input-button,
-.page {
-  background-color: #717c89;
-  color: white;
-  font-size: 1rem;
-  padding: 7px 10px;
-  border-radius: 5px;
-  border: 1px solid #d2d9dc;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-#input-button:hover,
-.page:hover {
-  color: orange;
 }
 
 .menu-choice {
